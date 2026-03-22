@@ -1,0 +1,15 @@
+{
+  "_comment": "Claude Code hooks configuration. Copy the contents of 'hooks' below into your .claude/settings.json under the 'hooks' key, OR run: cat hooks/hooks.json | jq .hooks >> ~/.claude/settings.json",
+
+  "hooks": [
+    {
+      "matcher": "Stop",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node hooks/check-pipeline.js"
+        }
+      ]
+    }
+  ]
+}
