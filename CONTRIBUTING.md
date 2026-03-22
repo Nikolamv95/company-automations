@@ -77,6 +77,23 @@ If any check fails → fix the agent `description` or SKILL.md before using.
 **Rule: every SKILL.md edit requires a version bump. No exceptions.**
 This keeps `output/{product}/skill-versions.md` meaningful.
 
+### prompts/ ↔ SKILL.md sync
+
+`/deep-research` uses `prompts/` execution templates. `/write-copy` uses `SKILL.md` directly.
+**These are two separate instruction sets for the same agents — they must stay in sync.**
+
+When you edit a SKILL.md that has a corresponding prompts/ file, update both:
+
+| SKILL.md | prompts/ counterpart |
+|----------|---------------------|
+| skills/research/researcher/SKILL.md | prompts/01_awareness.md, 02_competitor.md, 03_avatar.md, 04_master_doc.md |
+| skills/research/strategist/SKILL.md | prompts/05_desire_extraction.md, 06_desire_validation.md, 09_marketing_angles.md |
+| skills/copywriting/hook-writer/SKILL.md | prompts/07_hooks.md |
+| skills/copywriting/ad-copy-writer/SKILL.md | prompts/08_desire_testing.md, 10_angle_testing.md |
+| skills/copywriting/advertorial-writer/SKILL.md | prompts/11a_advertorial_nightmare.md, 11b_advertorial_authority.md |
+
+**If you skip this step, `/deep-research` and `/write-copy` will produce different results for the same product.**
+
 ---
 
 ## Adding a New Pipeline

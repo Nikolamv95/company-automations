@@ -217,7 +217,7 @@ Read the actual `version` value from each SKILL.md frontmatter at the time of ge
 
 ## Pipeline State
 
-During `/deep-research`, write a `.pipeline-state.json` to the project root:
+During `/deep-research`, write a `.pipeline-state-{product_slug}.json` to the project root, where `product_slug` = product name lowercased with spaces replaced by hyphens (e.g. "Water Out" → `.pipeline-state-water-out.json`):
 
 ```json
 {
@@ -229,9 +229,9 @@ During `/deep-research`, write a `.pipeline-state.json` to the project root:
 }
 ```
 
-Update `completed_steps` after each step completes. The Stop hook reads this file to check if the pipeline is complete. When all steps are done, delete `.pipeline-state.json`.
+Update `completed_steps` after each step completes. The Stop hook reads this file to check if the pipeline is complete. When all steps are done, delete `.pipeline-state-{product_slug}.json`.
 
-**Recovery if `.pipeline-state.json` is missing or corrupt mid-pipeline:**
+**Recovery if `.pipeline-state-{product_slug}.json` is missing or corrupt mid-pipeline:**
 1. Check which output files exist in `output/{product}/`
 2. Recreate the file with those steps in `completed_steps`
 3. Continue from the first missing step
@@ -245,7 +245,7 @@ Update `completed_steps` after each step completes. The Stop hook reads this fil
 2. Ask the user: "Step 3 (Avatar Building) produced no usable output. [R]etry with same inputs / [S]kip and continue / [A]bort pipeline"
 3. **Retry** → re-run the same sub-agent with the same inputs
 4. **Skip** → add to `skipped_steps`, note the gap for downstream steps, continue
-5. **Abort** → delete `.pipeline-state.json`, list which steps completed
+5. **Abort** → delete `.pipeline-state-{product_slug}.json`, list which steps completed
 
 **If a step fails due to tool or API error (not bad output):**
 → Auto-retry once silently. If second attempt also fails → ask user (same R/S/A options).

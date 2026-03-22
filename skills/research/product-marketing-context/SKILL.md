@@ -88,3 +88,15 @@ Every marketing skill checks for this file first:
 - `strategist` — uses customer language for desire extraction
 - `copywriter` — uses brand voice and proof points
 - `competitor-alternatives` — uses competitive landscape section
+
+## Self-Check
+
+Before saving the file, verify:
+- [ ] All 12 sections are present — none missing or skipped without a note
+- [ ] Customer Language section contains verbatim phrases, not paraphrased marketing copy
+- [ ] Proof Points include at least one specific number, name, or timeframe
+- [ ] Customer Personas are named and role-specific — not "busy professional" or "small business owner"
+- [ ] Competitive Landscape names actual competitors — not "other solutions on the market"
+- [ ] No section contains placeholder text (e.g., "[TBD]", "N/A", "to be filled")
+
+If any check fails → fix it before saving.

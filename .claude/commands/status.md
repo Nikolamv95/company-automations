@@ -1,6 +1,6 @@
 Show the pipeline status for a product (or all products if no argument given): $ARGUMENTS
 
-1. If a product name is given: check `output/{product}/` and list which output files exist (✓) and which are missing (✗). Also show `.pipeline-state.json` if present — including any `failed_steps` or `skipped_steps`.
+1. If a product name is given: check `output/{product}/` and list which output files exist (✓) and which are missing (✗). Also show `.pipeline-state-{product_slug}.json` if present (slug = product name lowercased, spaces → hyphens) — including any `failed_steps` or `skipped_steps`.
 
 2. If no product name: list all subdirectories in `output/` and for each show a summary: `X/12 steps complete`.
 
@@ -24,7 +24,7 @@ Next steps ready: Step 9 (Marketing Angles)
 Run /write-copy "Slim Body" to continue.
 ```
 
-If `.pipeline-state.json` has failed or skipped steps, show them:
+If `.pipeline-state-{product_slug}.json` has failed or skipped steps, show them:
 ```
   ⚠ Step 3 — skipped (no avatar data)
   ✗ Step 5 — failed (empty output) → run /deep-research "Slim Body" to retry from Step 5

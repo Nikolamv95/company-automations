@@ -37,6 +37,7 @@ C = Call to Action (specific, low-friction next step)
 - Bold key phrases (mechanism name, primary desire, proof highlights)
 - **Product name appears in Section 5 or later** — never in the headline or opening
 - First and last sentence of every section creates a pull to the next
+- **Disclaimer required at the bottom:** add a single line — `"This is an advertorial. Results may vary."` — after the final CTA. Do not embed it mid-copy.
 - Platform word count targets:
   - Facebook native: 600-900 words
   - Taboola/Outbrain: 800-1200 words

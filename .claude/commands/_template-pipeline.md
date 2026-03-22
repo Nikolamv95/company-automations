@@ -96,7 +96,7 @@ If `--skip-drive` was passed, skip this step.
 
 ## Pipeline State
 
-Write `.pipeline-state.json` at the start of Step 2:
+Write `.pipeline-state-{product_slug}.json` at the start of Step 2 (slug = product name lowercased, spaces → hyphens):
 
 ```json
 {
@@ -111,7 +111,7 @@ Write `.pipeline-state.json` at the start of Step 2:
 
 Update `completed_steps` after each step completes.
 On step failure: see `CLAUDE.md` → Pipeline Step Error Handling for retry/skip/abort protocol.
-When all steps done: delete `.pipeline-state.json`.
+When all steps done: delete `.pipeline-state-{product_slug}.json`.
 
 ---
 

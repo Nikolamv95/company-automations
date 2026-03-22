@@ -109,7 +109,7 @@ Load before writing long-form copy:
 
 Before presenting output, verify:
 - [ ] Word count matches type: desire-testing (150-300 words), angle-testing (200-400 words)
-- [ ] Follows HOOK → BRIDGE → PROBLEM → MECHANISM → PROOF → CTA structure
+- [ ] Follows HOOK → BRIDGE → PROBLEM → MECHANISM → PROOF FLASH → CTA structure
 - [ ] Product name appears LATE — not in opening lines
 - [ ] Single CTA only — no competing actions
 - [ ] 5th grade reading level (short sentences, no jargon)
