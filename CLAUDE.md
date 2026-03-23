@@ -60,24 +60,30 @@ CREATIVE PHASE
 
 ## Output Files
 
-All outputs go to `output/{product_name}/`:
+All outputs go to `output/{brand}/{product_name}/`:
+
+- `brand` = brand name slug (lowercased, spaces → hyphens, e.g. "Stoitchkov Nutrition" → `stoitchkov-nutrition`)
+- `product_name` = product name slug (same rule, e.g. "Water Goal 6" → `water-goal-6`)
 
 ```
-intake.md
-01_awareness.md
-02_competitor.md
-03_avatar.md
-04_master_doc.md
-product-marketing-context.md   ← generated with step 4
-05_desire_extraction.md
-06_desire_validation.md
-07_hooks.md
-08_desire_testing_copy.md
-09_marketing_angles.md
-10_angle_testing_copy.md
-11a_advertorial.md
-11b_advertorial.md
-skill-versions.md
+output/
+  {brand}/
+    {product_name}/
+      intake.md
+      01_awareness.md
+      02_competitor.md
+      03_avatar.md
+      04_master_doc.md
+      product-marketing-context.md   ← generated with step 4
+      05_desire_extraction.md
+      06_desire_validation.md
+      07_hooks.md
+      08_desire_testing_copy.md
+      09_marketing_angles.md
+      10_angle_testing_copy.md
+      11a_advertorial.md
+      11b_advertorial.md
+      skill-versions.md
 ```
 
 ---
@@ -85,7 +91,7 @@ skill-versions.md
 ## Critical Rules
 
 1. **Never save to Pinecone automatically** — always ask the user which files to save at the end of the pipeline.
-2. **Always load `product-marketing-context.md`** before generating any copy — if it exists in `output/{product}/`, load it as shared brand context. Do not contradict or re-derive established information.
+2. **Always load `product-marketing-context.md`** before generating any copy — if it exists in `output/{brand}/{product}/`, load it as shared brand context. Do not contradict or re-derive established information.
 3. **Pipeline dependency order is fixed** — follow the step order above. Do not run step 4 before steps 1+2+3 are complete.
 4. **Both advertorial templates always run** — Step 11 always generates both `11a_advertorial.md` (Nightmare) and `11b_advertorial.md` (Authority). Run sequentially: 11a first, then 11b. Note: 11c Listicle is available in standalone mode only (no pipeline prompt template exists).
 5. **Reading level: 5th grade** — all generated copy. Flesch-Kincaid 60–70. Short sentences. One idea per paragraph.
@@ -99,7 +105,7 @@ skill-versions.md
 Persistent brand data lives in `projects/{brand-slug}/brand.md`. This file contains voice, tone, audience, channels, restrictions, approved claims, compliance notes, and best practices for a specific brand.
 
 - **Template:** `projects/_template/brand.md` — copy and fill in for each new brand
-- **Pipeline outputs** for a brand go to `output/{product}/` (gitignored) — same as always
+- **Pipeline outputs** for a brand go to `output/{brand}/{product}/` (gitignored)
 - **`projects/*/output/`** is gitignored — if you save outputs inside a project folder, they stay local
 
 ---
@@ -108,7 +114,7 @@ Persistent brand data lives in `projects/{brand-slug}/brand.md`. This file conta
 
 | | `brand.md` | `product-marketing-context.md` |
 |---|---|---|
-| Location | `projects/{brand}/` | `output/{product}/` |
+| Location | `projects/{brand}/` | `output/{brand}/{product}/` |
 | Contains | Voice, tone, channels, restrictions, best practices | Mechanism, avatar desires, proof points, hooks |
 | Created by | Manually (by the user) | Automatically (Step 4 of pipeline) |
 | Git tracked | ✓ yes | ✗ no (gitignored) |
@@ -166,9 +172,9 @@ Agents are in `agents/`. Each `agent.md` has frontmatter with:
 
 1. Identify the brand → ask if not clear
 2. Load `projects/{brand}/brand.md` if it exists (overrides system defaults)
-3. Load `output/{product}/product-marketing-context.md` if it exists
+3. Load `output/{brand}/{product}/product-marketing-context.md` if it exists
 4. Read the relevant SKILL.md for the task
-5. Check which pipeline steps are already complete in `output/{product}/`
+5. Check which pipeline steps are already complete in `output/{brand}/{product}/`
 
 ---
 
@@ -186,7 +192,7 @@ After generating any copy output:
 
 Every SKILL.md has a `version` field in its frontmatter (e.g., `version: 2.0.0`).
 
-**After `/deep-research` completes all 11 steps**, write `output/{product}/skill-versions.md`:
+**After `/deep-research` completes all 11 steps**, write `output/{brand}/{product}/skill-versions.md`:
 
 ```markdown
 # Skill Versions — {product_name}
@@ -217,7 +223,7 @@ Read the actual `version` value from each SKILL.md frontmatter at the time of ge
 
 ## Pipeline State
 
-During `/deep-research`, write a `.pipeline-state-{product_slug}.json` to the project root, where `product_slug` = product name lowercased with spaces replaced by hyphens (e.g. "Water Out" → `.pipeline-state-water-out.json`):
+During `/deep-research`, write a `.pipeline-state-{brand_slug}-{product_slug}.json` to the project root, where slugs are name lowercased with spaces replaced by hyphens (e.g. brand "The Green Bear", product "Water Out" → `.pipeline-state-the-green-bear-water-out.json`):
 
 ```json
 {
@@ -229,10 +235,10 @@ During `/deep-research`, write a `.pipeline-state-{product_slug}.json` to the pr
 }
 ```
 
-Update `completed_steps` after each step completes. The Stop hook reads this file to check if the pipeline is complete. When all steps are done, delete `.pipeline-state-{product_slug}.json`.
+Update `completed_steps` after each step completes. The Stop hook reads this file to check if the pipeline is complete. When all steps are done, delete `.pipeline-state-{brand_slug}-{product_slug}.json`.
 
-**Recovery if `.pipeline-state-{product_slug}.json` is missing or corrupt mid-pipeline:**
-1. Check which output files exist in `output/{product}/`
+**Recovery if `.pipeline-state-{brand_slug}-{product_slug}.json` is missing or corrupt mid-pipeline:**
+1. Check which output files exist in `output/{brand}/{product}/`
 2. Recreate the file with those steps in `completed_steps`
 3. Continue from the first missing step
 
@@ -245,7 +251,7 @@ Update `completed_steps` after each step completes. The Stop hook reads this fil
 2. Ask the user: "Step 3 (Avatar Building) produced no usable output. [R]etry with same inputs / [S]kip and continue / [A]bort pipeline"
 3. **Retry** → re-run the same sub-agent with the same inputs
 4. **Skip** → add to `skipped_steps`, note the gap for downstream steps, continue
-5. **Abort** → delete `.pipeline-state-{product_slug}.json`, list which steps completed
+5. **Abort** → delete `.pipeline-state-{brand_slug}-{product_slug}.json`, list which steps completed
 
 **If a step fails due to tool or API error (not bad output):**
 → Auto-retry once silently. If second attempt also fails → ask user (same R/S/A options).
@@ -264,7 +270,7 @@ The Pinecone MCP server (`servers/pinecone-server.js`) provides `save_to_memory`
 - Continue the task without memory results — do not block execution.
 
 **If `save_to_memory` fails:**
-- Inform the user: "Could not save to Pinecone — server may not be running. Files are saved locally in `output/{product}/`."
+- Inform the user: "Could not save to Pinecone — server may not be running. Files are saved locally in `output/{brand}/{product}/`."
 - Do not retry automatically. Let the user restart the server and try `/save-to-memory` manually.
 
 **Specific error scenarios:**

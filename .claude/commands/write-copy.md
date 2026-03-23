@@ -28,11 +28,11 @@ Before routing to any skill or running any step:
 
 When given a product name that has existing output files:
 
-1. Check `output/{product}/` — does `04_master_doc.md` and `06_desire_validation.md` exist?
+1. Check `output/{brand}/{product}/` — does `04_master_doc.md` and `06_desire_validation.md` exist?
    - No → tell user to run `/deep-research "{product}"` first (research phase must complete first)
    - Yes → proceed
 
-2. Load `output/{product}/product-marketing-context.md` as shared brand context.
+2. Load `output/{brand}/{product}/product-marketing-context.md` as shared brand context.
 
 3. Unless `--automation` flag is set, ask which steps to run:
    - [ ] Step 7 — Hooks
@@ -49,7 +49,7 @@ When given a product name that has existing output files:
    - Step 10 → ad-copy-writer (waits for 9)
    - Step 11 → advertorial-writer (waits for 9)
 
-5. Save outputs to `output/{product}/` (overwrites existing files for selected steps).
+5. Save outputs to `output/{brand}/{product}/` (overwrites existing files for selected steps).
 
 **`--automation` flag:** Skip all prompts. Run all 5 steps in the correct order without asking.
 
@@ -73,6 +73,6 @@ Output: print directly to console. Do not save to `output/` unless user asks.
 
 Loading order:
 1. `projects/{brand}/brand.md` — voice, tone, restrictions (overrides system defaults)
-2. `output/{product}/product-marketing-context.md` — avatar, desires, proof points
+2. `output/{brand}/{product}/product-marketing-context.md` — avatar, desires, proof points
 
 If `product-marketing-context.md` doesn't exist in ad-hoc mode, ask: "Do you have a product-marketing-context.md I should load? Or should I proceed without it?"
