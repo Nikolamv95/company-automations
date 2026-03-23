@@ -29,7 +29,7 @@ Before routing to any skill or running any step:
 When given a product name that has existing output files:
 
 1. Check `output/{brand}/{product}/` — does `04_master_doc.md` and `06_desire_validation.md` exist?
-   - No → tell user to run `/deep-research "{product}"` first (research phase must complete first)
+   - No → tell user to run `/deep-research "{brand}" "{product}"` first (research phase must complete first)
    - Yes → proceed
 
 2. Load `output/{brand}/{product}/product-marketing-context.md` as shared brand context.
