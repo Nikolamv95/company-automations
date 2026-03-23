@@ -83,10 +83,10 @@ Stoitchkov Nutrition is a premium dietary supplement brand created by Hristo Sto
 
 ## Products
 
-- Water Goal 6 (Electrolyte mix with herbs) → `output/water-goal-6/`
-- Magne Master 8 (Magnesium complex with amino acids) → `output/magne-master-8/`
-- Daily Pack 94 (Vitamins and minerals) → `output/daily-pack-94/`
-- S8 All In One Package (complete daily protocol) → `output/s8-all-in-one/`
+- Water Goal 6 (Electrolyte mix with herbs) → `output/stoitchkov-nutrition/water-goal-6/`
+- Magne Master 8 (Magnesium complex with amino acids) → `output/stoitchkov-nutrition/magne-master-8/`
+- Daily Pack 94 (Vitamins and minerals) → `output/stoitchkov-nutrition/daily-pack-94/`
+- S8 All In One Package (complete daily protocol) → `output/stoitchkov-nutrition/s8-all-in-one/`
 
 **Product logic (S8 daily protocol):**
 - Morning: Daily Pack 94
