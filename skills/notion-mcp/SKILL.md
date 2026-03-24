@@ -108,6 +108,27 @@ All multilingual description fields in Notion use this structure:
 
 **Send all blocks in a single `API-patch-block-children` call** — no need to split into multiple requests.
 
+## Create a new database task
+
+Do this directly — no sub-agents. 3 steps total:
+
+```
+1. API-post-search { query: "" }
+   → Identify the target database ID from results
+
+2. API-retrieve-a-database { database_id: "..." }
+   → Read the schema: property names, types, and available options
+
+3. API-create-a-page {
+     parent: { database_id: "..." },
+     properties: { ...mapped from schema }
+   }
+```
+
+Map the user's intent to whatever properties exist in that database — don't assume field names. Each database is different.
+
+**Important:** Always use English for page titles — Cyrillic breaks encoding when sent via MCP.
+
 ## Translation workflow
 
 ```
