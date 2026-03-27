@@ -8,7 +8,7 @@ Direct-response marketing automation for Claude Code. Zero TypeScript — Claude
 
 ## How It Works
 
-This is a Claude Code plugin. Skills auto-load when relevant. Commands run as slash commands. Sub-agents handle each pipeline step with their own context window. Files on disk are the state.
+This is a Claude Code plugin. Skills auto-load when relevant. Commands run as slash commands. Agents are used only for pipeline orchestration and ambiguity fallback routing. Files on disk are the state.
 
 ```
 /deep-research "Product"   →   11-step pipeline → output/{product}/
@@ -132,6 +132,8 @@ Skills auto-activate when you describe a task — no slash command needed.
 | `translator` | Translating copy to another language |
 | `gws-drive-upload` | Uploading to Google Drive |
 | `docx` | Converting to Word format |
+
+Standalone commands should resolve directly to SKILL.md files. Use agents only for `/deep-research` pipeline orchestration and `copywriter` fallback when request type is ambiguous.
 
 ---
 
@@ -278,8 +280,8 @@ Pipeline outputs still go to `output/{product}/` (gitignored). The `brand.md` fi
 To add a new automation (e.g. Krea.ai creatives):
 
 1. `.claude/commands/krea-creatives.md` — slash command definition
-2. `agents/krea-agent.md` — agent instructions
-3. `skills/krea/SKILL.md` — skill that auto-activates
+2. `skills/krea/SKILL.md` — execution logic (source of truth)
+3. `agents/krea-agent.md` (optional) — only if you need multi-step orchestration or ambiguity routing
 4. `servers/krea-server.js` (optional) — MCP server if API needed
 
 Nothing existing is modified. See `CONTRIBUTING.md` for architecture standards.

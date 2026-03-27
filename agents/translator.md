@@ -1,8 +1,9 @@
 ---
 name: translator
-description: "Use for translating copy, pipeline outputs, or raw text to another language.
-  Triggers: translate, преведи, translation, превод, Bulgarian translation, Spanish
-  translation, напиши на български, translate to, преведи на."
+description: >
+  Use when the user wants to translate copy, pipeline output files, or raw text into
+  another language. Preserves conversion mechanics, tone, and formatting. Works with
+  single files, multiple files, or inline text.
 skills:
   - skills/translation/translator/SKILL.md
 context:

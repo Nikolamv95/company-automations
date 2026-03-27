@@ -59,9 +59,18 @@ When given a product name that has existing output files:
 
 When given a plain text description (not a product name with existing files):
 
-Read the `description` field in each `agents/*.md` frontmatter and match it to the request.
-Each agent lists its trigger keywords (BG + EN) — invoke the matching agent.
-If no clear match → invoke `copywriter` as fallback.
+Resolve intent to a direct skill match from `skills/copywriting/*/SKILL.md`:
+
+- Hooks/headlines → `skills/copywriting/hook-writer/SKILL.md`
+- Ads/performance ads → `skills/copywriting/ad-copy-writer/SKILL.md`
+- Email/sequences → `skills/copywriting/email-writer/SKILL.md`
+- Landing page/sales page → `skills/copywriting/lp-writer/SKILL.md`
+- VSL/video sales letter → `skills/copywriting/vsl-writer/SKILL.md`
+- Advertorial/native article → `skills/copywriting/advertorial-writer/SKILL.md`
+- Social post/content calendar → `skills/copywriting/social-content/SKILL.md`
+- Editing/polish/rewrite → `skills/copywriting/copy-editor/SKILL.md`
+
+If the format is ambiguous, ask one clarifying question. If still unclear → use `copywriter` as fallback router.
 
 If `--file` is provided, load that file as additional context before generating.
 

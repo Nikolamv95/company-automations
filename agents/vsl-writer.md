@@ -1,9 +1,11 @@
 ---
 name: vsl-writer
-description: "Use for VSL scripts, video sales letters, and sales video scripts. Triggers:
-  VSL, video sales letter, video script, sales video, видео скрипт, напиши VSL,
-  write VSL, video ad script."
+description: >
+  Use when the user wants a video sales letter (VSL) script or any spoken-word sales video
+  script. Handles 60-second, 3-minute, and long-form formats. Output is paced for video
+  delivery with scene directions.
 skills:
+  - skills/copywriting/copywriter/SKILL.md
   - skills/copywriting/vsl-writer/SKILL.md
 context:
   - projects/{brand}/brand.md

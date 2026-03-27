@@ -1,7 +1,7 @@
 ---
 name: notion-mcp
 version: 1.2.0
-description: "Work with Notion via MCP — read pages, update block content, translate multilingual fields, query databases, navigate workspace. Use when: reading or writing Notion pages, translating text in Notion, updating database entries, bulk editing blocks. Triggers: notion, notion page, update notion, translate in notion, read from notion, write to notion, Notion database, намери в Notion, обнови Notion, преведи в Notion, запиши в Notion."
+description: "Work with Notion via MCP — read pages, update block content, translate multilingual fields, query databases, navigate workspace. Use when: reading or writing Notion pages, translating text in Notion, updating database entries, bulk editing blocks. Triggers: notion, notion page, update notion, translate in notion, read from notion, write to notion, Notion database."
 metadata:
   mcp-server: notion
   category: production

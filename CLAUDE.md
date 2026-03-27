@@ -23,8 +23,8 @@ Research → Strategy → Copywriting → Production → Analysis → Translatio
 ## Architecture
 
 - **Commands** (`commands/`) — slash command definitions. You follow these when the user types `/deep-research`, `/write-copy`, etc.
-- **Agents** (`agents/`) — sub-agent definitions. Spawn these for each pipeline step.
-- **Skills** (`skills/`) — SKILL.md files organized by workflow stage (see System Overview above). Each agent's frontmatter lists which skills it loads. Always read the relevant SKILL.md before executing any task.
+- **Agents** (`agents/`) — exist only for pipeline orchestration and routing. Do NOT spawn an agent for standalone tasks — execute directly from the relevant SKILL.md instead.
+- **Skills** (`skills/`) — SKILL.md files are the source of execution truth. Match user intent to a skill, read it, execute. Always read the relevant SKILL.md before executing any task.
 - **Hooks** (`hooks/`) — Stop hook that checks pipeline completion. Do not fight it; if it fires, continue the pipeline.
 - **Servers** (`servers/`) — Pinecone MCP server. Use `save_to_memory` and `search_memory` tools when the user asks for memory operations.
 
@@ -144,21 +144,49 @@ For every copy, research, or translation task:
 
 ---
 
-## Agent Discovery
+## Skill Resolution
 
-Agents are in `agents/`. Each `agent.md` has frontmatter with:
-- `description` — trigger phrases (BG + EN) to match the user's request
-- `skills` — SKILL.md files to load before executing
-- `context` — brand/product context files to load
+**Skills are the source of execution truth.** For standalone tasks, skip the agent layer and go directly to the SKILL.md.
 
-**For user requests:** match the request to agent `description` triggers → invoke the matching agent.
-**For pipelines** (`/deep-research`): agents are invoked explicitly by name — no discovery needed.
+### When to use an Agent
 
-**Disambiguation rules:**
+Agents exist for two purposes only:
+
+| Reason | Examples |
+|--------|---------|
+| **Pipeline orchestration** — multi-step work with dependencies, parallel batches, prompt files | `researcher`, `strategist`, `hook-writer`, `ad-copy-writer`, `advertorial-writer` |
+| **Routing** — dispatching an ambiguous request to the right specialist | `copywriter` (fallback router) |
+
+For everything else — emails, hooks, Drive uploads, translations, analytics, images, videos, editing, docx — **execute directly from the SKILL.md without spawning an agent.**
+
+### Deprecated standalone wrappers
+
+If an `agents/*.md` file only wraps one SKILL.md and adds no orchestration, treat it as deprecated for standalone use. Keep it only for backward compatibility or migration, and route standalone requests directly to the skill.
+
+### How to resolve intent → skill
+
+1. Read the `description` field in the relevant `SKILL.md` files under `skills/`
+2. Match the user's request to the best skill
+3. Read that SKILL.md fully before executing
+4. Apply brand detection (see Brand Detection section)
+
+SKILL.md files are organized by category — scan the right folder:
+
+| User wants | Scan |
+|-----------|------|
+| Copy (hooks, ads, emails, LP, VSL, advertorial, social) | `skills/copywriting/` |
+| Research or strategy | `skills/research/`, `skills/strategy/` |
+| Production (images, video, docx, Drive, Notion, HTML) | `skills/production/`, `skills/google-workspace/`, `skills/notion-mcp/` |
+| Analytics, tracking | `skills/analysis/` |
+| Translation | `skills/translation/` |
+| System (build skills, MCPs, analyze codebase) | `skills/system/` |
+
+### Disambiguation rules
+
 - Slash command always takes priority over natural language
-- "напиши копи" without format → ask: "What type? Hooks / Facebook ad / Email / Landing page / VSL / Advertorial / Social post"
+- Ambiguous copy request without format → ask: "What type? Hooks / Facebook ad / Email / Landing page / VSL / Advertorial / Social post"
 - Brand detection: if brand not mentioned → search `projects/` for brand whose `brand.md` lists this product → if not found, ask
-- Natural language works in Bulgarian and English
+- If multiple skills could apply → pick the most specific one; mention which skill you're using
 
 ---
 

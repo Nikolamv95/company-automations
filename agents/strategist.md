@@ -1,10 +1,12 @@
 ---
 name: strategist
-description: "Use for desire extraction, desire validation, and marketing angles. Triggers:
-  desire extraction, desire validation, marketing angles, стратегия, желания на аватара,
-  ъгли, desire stack, what does the customer want, marketing strategy."
+description: >
+  Use when the user wants to extract or validate customer desires, build a desire stack,
+  or develop marketing angles. Handles pipeline steps 5, 6, and 9. Also use for standalone
+  strategy tasks around what the customer wants and how to position against it.
 skills:
   - skills/research/strategist/SKILL.md
+  - skills/research/marketing-psychology/SKILL.md
 context:
   - projects/{brand}/brand.md
   - output/{product}/product-marketing-context.md

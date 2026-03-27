@@ -1,9 +1,11 @@
 ---
 name: lp-writer
-description: "Use for landing pages, sales pages, opt-in pages, and checkout pages.
-  Triggers: landing page, sales page, opt-in, checkout page, LP, sales letter, напиши
-  landing page, write landing page, LP design, build LP."
+description: >
+  Use when the user wants to write a landing page, sales page, opt-in page, or checkout
+  page. Produces CRO-optimized copy with complete page structure: headline, subheadline,
+  benefits, proof, objections, CTA.
 skills:
+  - skills/copywriting/copywriter/SKILL.md
   - skills/copywriting/lp-writer/SKILL.md
 context:
   - projects/{brand}/brand.md

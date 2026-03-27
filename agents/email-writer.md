@@ -1,9 +1,11 @@
 ---
 name: email-writer
-description: "Use for email sequences, follow-up emails, and nurture flows. Triggers:
-  email sequence, follow-up, nurture, welcome sequence, drip campaign, имейл, имейл
-  последователност, напиши имейл, write email, email campaign."
+description: >
+  Use when the user wants to write email sequences or individual emails. Handles welcome
+  sequences, promotional launches, re-engagement, and post-purchase onboarding. Works
+  standalone or fed from pipeline research outputs.
 skills:
+  - skills/copywriting/copywriter/SKILL.md
   - skills/copywriting/email-writer/SKILL.md
 context:
   - projects/{brand}/brand.md

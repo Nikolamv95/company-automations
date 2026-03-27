@@ -96,3 +96,13 @@ Apply behavioral science to marketing decisions. Always test assumptions with re
 **Switching Costs** — Build them intentionally: data import, integrations, learned workflows, community membership. High switching costs = high retention.
 
 **Flywheel** — Identify your growth loop: acquisition feeds activation feeds retention feeds referral feeds acquisition.
+
+---
+
+## Self-Check
+
+Before presenting any psychology-informed recommendation, verify:
+- [ ] Each recommendation maps to a specific model from this skill (named explicitly, not paraphrased)
+- [ ] No model is applied without checking if the underlying condition exists (e.g., scarcity only if it's real; social proof only if testimonials match the avatar)
+- [ ] Recommendations are grounded in research data or avatar insights — not assumptions about what "people in general" do
+If any check fails → revise the recommendation before presenting.

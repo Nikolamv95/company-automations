@@ -1,9 +1,9 @@
 ---
 name: copywriter
-description: "Use for general copy requests, unclear format requests, or when no specific
-  copy type is mentioned. Fallback agent for all copy tasks. Triggers: write copy,
-  напиши копи, general copy, unclear copy request, copy help, edit copy, improve copy,
-  polish copy."
+description: >
+  Fallback routing agent for all copy tasks. Use when the copy format is unspecified or
+  unclear. Identifies the right specialized agent (hook-writer, ad-copy-writer, email-writer,
+  lp-writer, vsl-writer, advertorial-writer, social-content) and routes the request to it.
 skills:
   - skills/copywriting/copywriter/SKILL.md
 context:

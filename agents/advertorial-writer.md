@@ -1,9 +1,11 @@
 ---
 name: advertorial-writer
-description: "Use for advertorials, RMBC copy, native article ads, and pre-sell pages.
-  Triggers: advertorial, RMBC, native article, pre-sell page, advertoriал, напиши
-  advertorial, long-form ad, story ad."
+description: >
+  Use when the user wants an advertorial, native article ad, or pre-sell page. Uses the
+  RMBC framework. Produces two templates: Nightmare (personal pain story) and Authority
+  (expert reveals hidden truth). Pipeline steps 11a and 11b.
 skills:
+  - skills/copywriting/copywriter/SKILL.md
   - skills/copywriting/advertorial-writer/SKILL.md
 context:
   - projects/{brand}/brand.md

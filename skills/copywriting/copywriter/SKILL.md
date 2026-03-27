@@ -104,6 +104,25 @@ Before any copy task:
 2. Load `output/{product}/product-marketing-context.md` if it exists
 3. If desire validation exists (`06_desire_validation.md`), use that language — do not invent desires
 
+## Natural Voice — All Languages
+
+When writing copy in any language, apply these rules in addition to all general rules above:
+
+**Word order — context before action**
+Put the setting or subject first, then the action. In every language, the topic establishes itself before the verb arrives. Follow the natural speech rhythm of that language — do not impose English sentence structure onto other languages.
+- ✅ BG: `При мен идват пациенти, които...`
+- ❌ BG: `Идват при мен пациенти с...`
+
+**Realistic speech — no theatrical fragments**
+Short disconnected fragments are a copywriter trick that reads as artificial in any language. Real human voice describes the scene in full sentences — how a person would actually tell the story out loud.
+- ✅ BG: `Отговорът в повечето случаи е объркване.`
+- ❌ BG: `Питам ги. Мълчат.`
+
+**Corrections are principles, not patches**
+When a sentence is corrected, extract the rule behind it and rewrite all similar sentences in the entire text — do not only replace the corrected sentence.
+
+---
+
 ## Self-Check
 
 Before presenting any copy output, verify:

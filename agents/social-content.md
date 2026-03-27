@@ -1,10 +1,11 @@
 ---
 name: social-content
-description: "Use for Facebook posts, Instagram captions, TikTok scripts, Reels, YouTube
-  Shorts, content calendars, and organic social content. Triggers: social post, пост
-  за фейсбук, facebook post, instagram caption, tiktok script, reel script, content
-  calendar, social content, напиши пост, write post, organic social."
+description: >
+  Use when the user wants organic social media content: Facebook posts, Instagram captions,
+  TikTok scripts, Reels, YouTube Shorts, or content calendars. Also handles repurposing
+  existing copy into social formats.
 skills:
+  - skills/copywriting/copywriter/SKILL.md
   - skills/copywriting/social-content/SKILL.md
 context:
   - projects/{brand}/brand.md

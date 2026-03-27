@@ -1,9 +1,11 @@
 ---
 name: ad-copy-writer
-description: "Use for Facebook ads, YouTube ads, Google ads, TikTok ads, desire testing
-  copy, and angle testing copy. Triggers: facebook ad, youtube ad, google ad, tiktok ad,
-  ad copy, реклама, рекламен текст, напиши реклама, write ad, desire testing, angle testing."
+description: >
+  Use when the user wants short-form ad copy for Facebook, YouTube, Google, or TikTok.
+  Also use for desire testing copy (pipeline step 8) and angle testing copy (pipeline step 10).
+  Handles single ads and batches of ad variations.
 skills:
+  - skills/copywriting/copywriter/SKILL.md
   - skills/copywriting/ad-copy-writer/SKILL.md
 context:
   - projects/{brand}/brand.md

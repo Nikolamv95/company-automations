@@ -1,9 +1,11 @@
 ---
 name: hook-writer
-description: "Use for hooks, headlines, and opening lines. Triggers: hooks, headlines,
-  opening lines, хукове, заглавия, write hooks, give me hooks, hook ideas, ad opener,
-  напиши хукове, opening hook, scroll stopper."
+description: >
+  Use when the user wants hooks, headlines, or opening lines for ads or content. Produces
+  scroll-stopping openers in multiple formats (curiosity, fear, desire, identity). Pipeline
+  step 7. Also use standalone for any hook or headline writing task.
 skills:
+  - skills/copywriting/copywriter/SKILL.md
   - skills/copywriting/hook-writer/SKILL.md
 context:
   - projects/{brand}/brand.md

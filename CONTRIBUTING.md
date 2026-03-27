@@ -10,34 +10,51 @@ Research → Strategy → Copywriting → Production → Analysis → Translatio
 
 ---
 
-## Adding a New Agent + Skill
+## Adding a New Skill (default path)
 
-**2 files. 0 edits to existing files.**
+**1 file. 0 edits to existing files.**
 
 1. Create `skills/{category}/{name}/SKILL.md`
-   - Use `skills/system/skill-creator/SKILL.md` → "Templates to Follow" for the exact template
+   - Use `skills/system/skill-creator/SKILL.md` -> "Templates to Follow" for the exact template
    - Must include: Brand Context, Rules, Output Format, Self-Check (min 3 assertions)
-   - No brand-specific content — that comes from `projects/{brand}/brand.md`
-   - No duplication — if a rule exists in another skill, reference it
+   - No brand-specific content -> that comes from `projects/{brand}/brand.md`
+   - No duplication -> if a rule exists in another skill, reference it
 
-2. Create `agents/{name}.md` with frontmatter:
-   ```yaml
-   ---
-   name: agent-name
-   description: "When to invoke. Trigger phrases (BG + EN).
-     Triggers: phrase1, phrase2, phrase3."
-   skills:
-     - skills/{category}/{name}/SKILL.md
-   context:
-     - projects/{brand}/brand.md
-     - output/{product}/product-marketing-context.md  # include only if relevant
-   ---
-   ```
-   - Orchestration only — no writing rules in the agent body
-   - Include Pipeline Mode (if used in `/deep-research`) and Standalone Mode
-   - Standalone mode must NOT read from `prompts/`
+Done. Resolve standalone commands directly to this skill.
+
+---
+
+## Add an Agent (only when needed)
+
+Create `agents/{name}.md` only if you need:
+- Multi-step orchestration with dependencies or parallelism
+- Ambiguity fallback routing to pick a specialist skill
+
+Agent frontmatter template:
+```yaml
+---
+name: agent-name
+description: "When to invoke. Trigger phrases (BG + EN).
+  Triggers: phrase1, phrase2, phrase3."
+skills:
+  - skills/{category}/{name}/SKILL.md
+context:
+  - projects/{brand}/brand.md
+  - output/{product}/product-marketing-context.md  # include only if relevant
+---
+```
+
+- Orchestration only -> no writing rules in the agent body
+- Include Pipeline Mode (if used in `/deep-research`) and Standalone Mode
+- Standalone mode must NOT read from `prompts/`
 
 Done. The agent is now discoverable via its `description` frontmatter field.
+
+---
+
+## Deprecated standalone wrappers
+
+If an agent only wraps one skill and adds no real orchestration/routing logic, treat it as deprecated for standalone execution and dispatch directly to the SKILL.md.
 
 ---
 
@@ -45,19 +62,19 @@ Done. The agent is now discoverable via its `description` frontmatter field.
 
 Run these 4 checks before using in production:
 
-1. **Should-trigger:** Send a request matching the agent's description triggers.
+1. **Should-trigger:** Send a request matching the agent's description triggers.  
    Expected: correct agent selected, output in correct format.
 
-2. **Should-not-trigger:** Send a request for a different agent type.
+2. **Should-not-trigger:** Send a request for a different agent type.  
    Expected: different agent selected, not this one.
 
-3. **Brand context:** Run with a brand that has `projects/{brand}/brand.md`.
+3. **Brand context:** Run with a brand that has `projects/{brand}/brand.md`.  
    Expected: brand voice and restrictions applied correctly.
 
-4. **Self-Check:** Verify the SKILL.md Self-Check catches intentionally bad output
+4. **Self-Check:** Verify the SKILL.md Self-Check catches intentionally bad output  
    (e.g., marketing jargon, sentences over 20 words, wrong reading level).
 
-If any check fails → fix the agent `description` or SKILL.md before using.
+If any check fails -> fix the agent `description` or SKILL.md before using.
 
 ---
 
@@ -65,8 +82,8 @@ If any check fails → fix the agent `description` or SKILL.md before using.
 
 **Specialized skill** (hook-writer, email-writer, etc.):
 - Edit the SKILL.md
-- Bump version: patch `1.0.0 → 1.0.1` for fixes, minor `1.0.0 → 1.1.0` for new rules
-- Only this agent is affected. Done.
+- Bump version: patch `1.0.0 -> 1.0.1` for fixes, minor `1.0.0 -> 1.1.0` for new rules
+- Only this skill path is affected. Done.
 
 **Base skill** (`skills/copywriting/copywriter/SKILL.md`):
 - Edit + bump version
@@ -74,13 +91,13 @@ If any check fails → fix the agent `description` or SKILL.md before using.
 - Update any specialized skill that contradicts the new base rule
 - Add a comment to the base skill: `<!-- Changed v1.x.x: [what changed] -->`
 
-**Rule: every SKILL.md edit requires a version bump. No exceptions.**
+**Rule: every SKILL.md edit requires a version bump. No exceptions.**  
 This keeps `output/{product}/skill-versions.md` meaningful.
 
-### prompts/ ↔ SKILL.md sync
+### prompts/ <-> SKILL.md sync
 
-`/deep-research` uses `prompts/` execution templates. `/write-copy` uses `SKILL.md` directly.
-**These are two separate instruction sets for the same agents — they must stay in sync.**
+`/deep-research` uses `prompts/` execution templates. `/write-copy` uses `SKILL.md` directly.  
+**These are two separate instruction sets for the same pipeline agents — they must stay in sync.**
 
 When you edit a SKILL.md that has a corresponding prompts/ file, update both:
 
@@ -92,7 +109,7 @@ When you edit a SKILL.md that has a corresponding prompts/ file, update both:
 | skills/copywriting/ad-copy-writer/SKILL.md | prompts/08_desire_testing.md, 10_angle_testing.md |
 | skills/copywriting/advertorial-writer/SKILL.md | prompts/11a_advertorial_nightmare.md, 11b_advertorial_authority.md |
 
-**If you skip this step, `/deep-research` and `/write-copy` will produce different results for the same product.**
+**If you skip this step, `/deep-research` and `/write-copy` can produce different results for the same product.**
 
 ---
 
@@ -100,12 +117,12 @@ When you edit a SKILL.md that has a corresponding prompts/ file, update both:
 
 **1 file. 0 edits to existing files.**
 
-1. Copy `.claude/commands/_template-pipeline.md` → `.claude/commands/{name}.md`
+1. Copy `.claude/commands/_template-pipeline.md` -> `.claude/commands/{name}.md`
 2. Replace all `{placeholders}` with your pipeline's values
 3. Delete the instruction block at the top
 
-The template includes standard sections: Brand Detection, Intake, Batch execution,
-Pipeline State (with error handling), Post-pipeline (Pinecone + Drive), Output Summary.
+The template includes standard sections: Brand Detection, Intake, Batch execution,  
+Pipeline State (with error handling), Post-pipeline (Pinecone + Drive), Output Summary.  
 Do not remove or modify the Pipeline State and Post-Pipeline sections.
 
 ---
@@ -119,7 +136,7 @@ Summary:
 2. Add to `.mcp.json`
 3. Add env vars to `.env.example` + `.env`
 4. Add entry to `servers/registry.md`
-5. Add error handling in `CLAUDE.md` → MCP Server Error Handling
+5. Add error handling in `CLAUDE.md` -> MCP Server Error Handling
 6. Restart Claude Code
 
 ---
@@ -131,8 +148,8 @@ cp -r projects/_template projects/my-brand
 # Edit projects/my-brand/brand.md
 ```
 
-Required fields: Brand name, Voice, Restrictions (write "none" if none).
-Optional fields: everything else — system defaults apply when missing.
+Required fields: Brand name, Voice, Restrictions (write "none" if none).  
+Optional fields: everything else -> system defaults apply when missing.
 
 ---
 
@@ -141,8 +158,8 @@ Optional fields: everything else — system defaults apply when missing.
 | Layer | Contains | Does NOT contain |
 |-------|----------|-----------------|
 | `agents/*.md` | Frontmatter (description, skills, context), orchestration, mode detection | Writing rules |
-| `skills/*/SKILL.md` | Writing rules, quality standards — single source of truth | Brand-specific content |
+| `skills/*/SKILL.md` | Writing rules, quality standards - single source of truth | Brand-specific content |
 | `commands/*.md` | Flow coordination, brand detection, pipeline steps | Writing rules |
 | `projects/{brand}/brand.md` | Voice, tone, restrictions, channels | Pipeline outputs |
-| `prompts/*.md` | Execution templates — only for `/deep-research` | Everything else |
+| `prompts/*.md` | Execution templates - only for `/deep-research` | Everything else |
 | `servers/*.js` | MCP tool implementations | Business logic |

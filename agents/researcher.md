@@ -1,9 +1,9 @@
 ---
 name: researcher
-description: "Use for market research, awareness analysis, competitor research, avatar
-  building, and master document creation. Triggers: research, проучи, awareness analysis,
-  competitor research, avatar building, master doc, market research, проучване на пазара,
-  who is the customer, analyze market."
+description: >
+  Use when the user wants to research a market, product, or audience. Handles awareness
+  analysis, competitor research, avatar building, and master document creation (pipeline
+  steps 1–4). Also use for standalone research tasks on any of these topics.
 skills:
   - skills/research/researcher/SKILL.md
 context:

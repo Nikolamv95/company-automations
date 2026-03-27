@@ -7,6 +7,20 @@ Reference this file when adding new servers or debugging existing ones.
 
 ## Active Servers
 
+### notion
+
+| Field | Value |
+|-------|-------|
+| File | `scripts/start-notion-mcp.sh` (external Notion MCP, started via bash) |
+| Purpose | Read, write, and query Notion pages and databases |
+| Registered in | `.mcp.json` as `"notion"` |
+
+**Tools:** Provided by Notion's official MCP server. See `skills/notion-mcp/SKILL.md` for usage patterns and workflows.
+
+**Note:** This is an external MCP server (not a custom server in `servers/`). Started via bash script — no env vars required beyond what the script configures.
+
+---
+
 ### pinecone-memory
 
 | Field | Value |
