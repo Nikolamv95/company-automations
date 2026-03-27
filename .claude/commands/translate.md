@@ -27,11 +27,11 @@ Before translating:
 
 `/translate {language} "Product Name"`
 
-1. List all `.md` files in `output/{product}/`
+1. List all `.md` files in `output/{brand}/{product}/research/`
 2. Show numbered list — ask user to select files (comma-separated numbers, or "all")
 3. For each selected file:
    - Translate preserving markdown formatting
-   - Save as `output/{product}/{filename}_{language_code}.md`
+   - Save as `output/{brand}/{product}/research/{filename}_{language_code}.md`
    - e.g. `07_hooks_bg.md` for Bulgarian
 
 ---

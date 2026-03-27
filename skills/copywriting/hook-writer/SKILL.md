@@ -40,33 +40,34 @@ Activate ONE of these:
 
 ## Deliverable
 
-**Pipeline mode:** 15 hooks:
-- 4 curiosity hooks
-- 4 fear/pain hooks
-- 4 desire/outcome hooks
-- 3 identity/pattern interrupt hooks
+**Count:** User-specified if given ("write me 5 hooks", "give me 20 hooks"). Otherwise use defaults:
+- Pipeline default: **15 hooks**
+- Standalone default: **10 hooks**
 
-**Standalone mode:** 10 hooks:
-- 3 curiosity hooks
-- 3 fear/pain hooks
-- 2 desire/outcome hooks
-- 2 identity/pattern interrupt hooks
+**Distribution (pipeline default, scale proportionally for other counts):**
+- ~27% curiosity hooks
+- ~27% fear/pain hooks
+- ~27% desire/outcome hooks
+- ~19% identity/pattern interrupt hooks
+
+At minimum: at least 1 of each type regardless of total count.
 
 **Top 3 Recommended** (ranked with one sentence rationale each)
 
 ## Mode Detection
 
-**PIPELINE MODE** — `output/{product}/06_desire_validation.md` exists:
+**PIPELINE MODE** — `output/{brand}/{product}/research/06_desire_validation.md` exists:
 → Load it. Use validated primary desire and exact language patterns from the file.
 → Do NOT invent new desires not present in the file.
-→ Produce 15 hooks (pipeline standard). Save to `output/{product}/07_hooks.md`.
+→ Produce hooks per user-specified count, or 15 if not specified.
+→ Save to `output/{brand}/{product}/research/07_hooks.md`.
 
 **STANDALONE MODE** — no pipeline files:
 → Before writing anything, ask for:
   1. Product — what does it do, who is it for (2-3 sentences)
   2. Primary desire — the "I want to..." statement from the avatar
   3. Awareness level (1–5)
-→ Produce 10 hooks in standalone mode.
+→ Produce hooks per user-specified count, or 10 if not specified.
 → Do NOT invent product details, demographics, or desires. Wait for the answer.
 
 ## References
@@ -78,7 +79,7 @@ Load before writing hooks:
 ## Self-Check
 
 Before presenting output, verify:
-- [ ] Exactly 10 hooks (standalone) or 15 hooks (pipeline)
+- [ ] Hook count matches user-specified number, or default (15 pipeline / 10 standalone)
 - [ ] Every hook is 6-20 words — count each one
 - [ ] No hook contains the product name
 - [ ] All 4 types represented: curiosity, fear, desire, identity

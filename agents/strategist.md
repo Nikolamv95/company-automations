@@ -7,9 +7,6 @@ description: >
 skills:
   - skills/research/strategist/SKILL.md
   - skills/research/marketing-psychology/SKILL.md
-context:
-  - projects/{brand}/brand.md
-  - output/{product}/product-marketing-context.md
 ---
 
 # Strategist Agent
@@ -21,13 +18,13 @@ Executes desire extraction, validation, and marketing angle pipeline steps 5, 6,
 
 ## Pipeline Mode (triggered by /deep-research)
 
-Auto-activates when called from `/deep-research` or when `output/{product}/intake.md` exists.
+Auto-activates when called from `/deep-research` or when `output/{brand}/{product}/research/intake.md` exists.
 
 | Step | Prompt File | Input | Output |
 |------|-------------|-------|--------|
-| 5 — Desire Extraction | `prompts/05_desire_extraction.md` | `intake.md` (competitor_urls + product_url) | `output/{product}/05_desire_extraction.md` |
-| 6 — Desire Validation | `prompts/06_desire_validation.md` | `05_desire_extraction.md` | `output/{product}/06_desire_validation.md` |
-| 9 — Marketing Angles | `prompts/09_marketing_angles.md` | `04_master_doc.md` + `06_desire_validation.md` | `output/{product}/09_marketing_angles.md` |
+| 5 — Desire Extraction | `prompts/05_desire_extraction.md` | `intake.md` (competitor_urls + product_url) | `output/{brand}/{product}/research/05_desire_extraction.md` |
+| 6 — Desire Validation | `prompts/06_desire_validation.md` | `05_desire_extraction.md` | `output/{brand}/{product}/research/06_desire_validation.md` |
+| 9 — Marketing Angles | `prompts/09_marketing_angles.md` | `04_master_doc.md` + `06_desire_validation.md` | `output/{brand}/{product}/research/09_marketing_angles.md` |
 
 **Variable substitution** (replace `{variable}` placeholders in prompt templates):
 

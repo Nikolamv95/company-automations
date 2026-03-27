@@ -13,7 +13,7 @@ Enhance, don't rewrite. Preserve the author's voice while improving every dimens
 Voice, tone, channel rules, and restrictions come from `projects/{brand}/brand.md`.
 Load it before executing. If brand.md doesn't exist for this brand, use system defaults.
 
-**Check first:** Load `projects/{brand}/brand.md` (if exists) + `output/{product}/product-marketing-context.md` for brand voice.
+**Check first:** Load `projects/{brand}/brand.md` (if exists) + `output/{brand}/{product}/research/product-marketing-context.md` for brand voice.
 
 ---
 

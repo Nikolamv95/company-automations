@@ -5,9 +5,9 @@ I'm working on creating Facebook Ads and advertorials in the **{niche}** space. 
 I have already performed deep research with LLMs on Market Awareness, Competitors, and the Avatar (Psychographic).
 
 The research documents are attached:
-- `output/{product}/01_awareness.md`
-- `output/{product}/02_competitor.md`
-- `output/{product}/03_avatar.md`
+- `output/{brand}/{product}/research/01_awareness.md`
+- `output/{brand}/{product}/research/02_competitor.md`
+- `output/{brand}/{product}/research/03_avatar.md`
 
 ---
 
@@ -64,7 +64,7 @@ What existing solutions has the market tried already? Why are those existing sol
 
 ## Additional Output: product-marketing-context.md
 
-After creating the master document, also generate a condensed version (max 500 words) saved as `output/{product}/product-marketing-context.md`.
+After creating the master document, also generate a condensed version (max 500 words) saved as `output/{brand}/{product}/research/product-marketing-context.md`.
 
 This condensed version is loaded by all copy-writing agents as shared brand context. Include:
 - Product name, price point, primary channel

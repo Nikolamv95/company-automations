@@ -101,7 +101,7 @@ Adjust depth per format — hooks are 6-20 words, advertorials are 900-1500 word
 
 Before any copy task:
 1. Load `projects/{brand}/brand.md` if it exists (overrides system defaults)
-2. Load `output/{product}/product-marketing-context.md` if it exists
+2. Load `output/{brand}/{product}/research/product-marketing-context.md` if it exists
 3. If desire validation exists (`06_desire_validation.md`), use that language — do not invent desires
 
 ## Natural Voice — All Languages

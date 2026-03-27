@@ -15,7 +15,7 @@ C = Call to Action (specific, low-friction next step)
 
 **Use when:** Angle leads with pain, before/after, transformation, "I used to..."
 
-**Total length:** 900-1,200 words
+**Total length:** 900-1,500 words
 
 ---
 

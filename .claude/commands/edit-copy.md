@@ -6,7 +6,7 @@ Polish, improve, or review existing copy using a 7-sweep editing framework.
 
 ```
 /edit-copy                        → paste copy in next message
-/edit-copy @output/{product}/07_hooks.md   → edit a specific file
+/edit-copy @output/{brand}/{product}/research/07_hooks.md   → edit a specific file
 /edit-copy --brand thegreenbear   → specify brand for voice rules
 ```
 
@@ -14,7 +14,7 @@ Polish, improve, or review existing copy using a 7-sweep editing framework.
 
 1. Identify brand from command or ask: "For which brand is this copy?"
 2. Load `projects/{brand}/brand.md` if it exists — apply voice, tone, and channel restrictions
-3. Load `output/{product}/product-marketing-context.md` if it exists
+3. Load `output/{brand}/{product}/research/product-marketing-context.md` if it exists
 
 ## Flow
 

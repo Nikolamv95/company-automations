@@ -50,19 +50,19 @@ Save all answers to `output/{product_name}/intake.md`.
 **Sub-agent: {agent-name}** → Step {N} ({Step Name})
 - Input: `intake.md`
 - Task: {what this agent does}
-- Output: `output/{product}/0N_{name}.md`
+- Output: `output/{brand}/{product}/research/0N_{name}.md`
 
 **Sub-agent: {agent-name}** → Step {N} ({Step Name})
 - Input: `intake.md`
 - Task: {what this agent does}
-- Output: `output/{product}/0N_{name}.md`
+- Output: `output/{brand}/{product}/research/0N_{name}.md`
 
 ### After Batch A:
 
 **Sub-agent: {agent-name}** → Step {N} ({Step Name})
 - Input: `0N_{prev}.md` + `0N_{prev2}.md`
 - Task: {what this agent does}
-- Output: `output/{product}/0N_{name}.md`
+- Output: `output/{brand}/{product}/research/0N_{name}.md`
 
 ---
 
@@ -73,7 +73,7 @@ Save all answers to `output/{product_name}/intake.md`.
 **Sub-agent: {agent-name}** → Step {N} ({Step Name})
 - Input: `0N_{prev}.md`
 - Task: {what this agent does}
-- Output: `output/{product}/0N_{name}.md`
+- Output: `output/{brand}/{product}/research/0N_{name}.md`
 
 ---
 
@@ -89,7 +89,7 @@ Never save automatically — always ask.
 
 If user provided a Drive folder URL during intake (not "skip"):
 Ask: "Ready to upload to Google Drive? Confirm folder: {folder_url}"
-On confirm: use `gws drive +upload` for each file in `output/{product}/`.
+On confirm: use `gws drive +upload` for each file in `output/{brand}/{product}/research/`.
 If `--skip-drive` was passed, skip this step.
 
 ---
@@ -129,4 +129,4 @@ Files saved: output/{product_name}/
   ✓ skill-versions.md
 ```
 
-Write `output/{product}/skill-versions.md` listing each step's agent, SKILL.md path, and version.
+Write `output/{brand}/{product}/research/skill-versions.md` listing each step's agent, SKILL.md path, and version.

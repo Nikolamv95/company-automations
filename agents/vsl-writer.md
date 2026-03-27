@@ -7,9 +7,6 @@ description: >
 skills:
   - skills/copywriting/copywriter/SKILL.md
   - skills/copywriting/vsl-writer/SKILL.md
-context:
-  - projects/{brand}/brand.md
-  - output/{product}/product-marketing-context.md
 ---
 
 # VSL Writer Agent
@@ -22,7 +19,7 @@ Writes spoken-word sales video scripts optimized for video delivery.
 ## When Activated
 
 Via `/write-copy`, copywriter routing, or direct request.
-Load `output/{product}/product-marketing-context.md` and `06_desire_validation.md` if they exist.
+Load `output/{brand}/{product}/research/product-marketing-context.md` and `06_desire_validation.md` if they exist.
 
 ## Standalone Mode
 

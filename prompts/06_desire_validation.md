@@ -4,7 +4,7 @@ I am doing deep research on mass desires and validating them in the market for a
 
 I would like for you to dive deep to help me understand which of the candidate mass desires are truly held by the market in **{target_country}**, and how strong they are compared to each other.
 
-I have used an LLM to extract the mass desires from my product. That output is in: `output/{product}/05_desire_extraction.md`
+I have used an LLM to extract the mass desires from my product. That output is in: `output/{brand}/{product}/research/05_desire_extraction.md`
 
 ---
 

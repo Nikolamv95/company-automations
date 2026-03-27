@@ -16,7 +16,7 @@ Run the full 11-step direct-response research and creative pipeline for a produc
 
 ## What This Does
 
-Runs all 11 pipeline steps → saves outputs to `output/{brand}/{product}/` → offers Pinecone save → offers Google Drive upload.
+Runs all 11 pipeline steps → saves outputs to `output/{brand}/{product}/research/` → offers Pinecone save → offers Google Drive upload.
 
 ---
 
@@ -62,37 +62,37 @@ Save all answers to `output/{brand}/{product_name}/intake.md`.
 **Sub-agent: researcher** → Step 1 (Awareness Analysis)
 - Input: `intake.md`
 - Task: Analyze Schwartz awareness level. Map where the audience sits on the 5-stage model. Validate or correct the user's hypothesis with reasoning.
-- Output: `output/{brand}/{product}/01_awareness.md`
+- Output: `output/{brand}/{product}/research/01_awareness.md`
 
 **Sub-agent: researcher** → Step 2 (Competitor Research)
 - Input: `intake.md`
 - Task: Research the named competitors. For each: positioning, angles used, price, claims, weaknesses. Identify gaps.
-- Output: `output/{brand}/{product}/02_competitor.md`
+- Output: `output/{brand}/{product}/research/02_competitor.md`
 
 **Sub-agent: researcher** → Step 3 (Avatar Building)
 - Input: `intake.md`
 - Task: Build the customer avatar. Demographics, psychographics, fears, desires, language patterns, self-perception. Use the Desire Stack model (surface/real/suppressed/identity desires).
-- Output: `output/{brand}/{product}/03_avatar.md`
+- Output: `output/{brand}/{product}/research/03_avatar.md`
 
 ### Batch B — After Batch A completes, run these 2 sub-agents IN PARALLEL:
 
 **Sub-agent: researcher** → Step 4 (Master Document)
 - Input: `01_awareness.md` + `02_competitor.md` + `03_avatar.md`
 - Task: Synthesize into a comprehensive master document. Include: awareness level (confirmed), avatar summary, competitor landscape, positioning opportunity, key differentiators.
-- Also generate: `output/{brand}/{product}/product-marketing-context.md` (shared context for all copy skills)
-- Output: `output/{brand}/{product}/04_master_doc.md` + `output/{brand}/{product}/product-marketing-context.md`
+- Also generate: `output/{brand}/{product}/research/product-marketing-context.md` (shared context for all copy skills)
+- Output: `output/{brand}/{product}/research/04_master_doc.md` + `output/{brand}/{product}/research/product-marketing-context.md`
 
 **Sub-agent: strategist** → Step 5 (Desire Extraction)
 - Input: `intake.md` + `03_avatar.md`
 - Task: Extract the full desire stack grounded in the avatar profile. Surface desire → Real desire → Suppressed desire → Identity desire. Also extract fear stack. Use Schwartz + Eugene Schwartz principles.
-- Output: `output/{brand}/{product}/05_desire_extraction.md`
+- Output: `output/{brand}/{product}/research/05_desire_extraction.md`
 
 ### After Batch B (Step 5 must be complete):
 
 **Sub-agent: strategist** → Step 6 (Desire Validation)
 - Input: `05_desire_extraction.md` + `03_avatar.md`
 - Task: Validate the desire stack against real market data and competitor language. Rank desires by intensity and specificity. Identify the single primary desire to lead all copy with.
-- Output: `output/{brand}/{product}/06_desire_validation.md`
+- Output: `output/{brand}/{product}/research/06_desire_validation.md`
 
 ---
 
@@ -103,36 +103,36 @@ Save all answers to `output/{brand}/{product_name}/intake.md`.
 **Sub-agent: hook-writer** → Step 7 (Hooks)
 - Input: `04_master_doc.md` + `06_desire_validation.md` + `product-marketing-context.md`
 - Task: Write 15 hooks (6–20 words each) across 4 types (curiosity, fear, desire, identity). Adapt for the confirmed awareness level. Rank top 3.
-- Output: `output/{brand}/{product}/07_hooks.md`
+- Output: `output/{brand}/{product}/research/07_hooks.md`
 
 **Sub-agent: strategist** → Step 9 (Marketing Angles)
 - Input: `04_master_doc.md` + `06_desire_validation.md`
 - Task: Develop 7+ distinct marketing angles. For each: angle name, core claim, target awareness level, why it works, hook direction. Select the primary angle.
-- Output: `output/{brand}/{product}/09_marketing_angles.md`
+- Output: `output/{brand}/{product}/research/09_marketing_angles.md`
 
 ### Batch D — Sequential:
 
 **Sub-agent: ad-copy-writer** → Step 8 (Desire Testing Copy)
 - Input: `07_hooks.md` + `06_desire_validation.md` + `product-marketing-context.md`
 - Task: Write 3 desire-testing ad copy variants (150–300 words each). Each tests a different desire from the desire stack. Facebook + YouTube format.
-- Output: `output/{brand}/{product}/08_desire_testing_copy.md`
+- Output: `output/{brand}/{product}/research/08_desire_testing_copy.md`
 
 **Sub-agent: ad-copy-writer** → Step 10 (Angle Testing Copy)
 - Input: `09_marketing_angles.md` + `product-marketing-context.md`
 - Task: Write 3 angle-testing ad copy variants (200–400 words each). One per top angle. Include hooks embedded in copy.
-- Output: `output/{brand}/{product}/10_angle_testing_copy.md`
+- Output: `output/{brand}/{product}/research/10_angle_testing_copy.md`
 
 **Sub-agent: advertorial-writer** → Step 11a (Advertorial — Nightmare)
 - Input: `09_marketing_angles.md` + `03_avatar.md` + `06_desire_validation.md` + `product-marketing-context.md`
 - Task: Write one full advertorial (900–1500 words) using the Nightmare template (personal pain story → transformation → product as solution).
 - Prompt: `prompts/11a_advertorial_nightmare.md`
-- Output: `output/{brand}/{product}/11a_advertorial.md`
+- Output: `output/{brand}/{product}/research/11a_advertorial.md`
 
 **Sub-agent: advertorial-writer** → Step 11b (Advertorial — Authority)
 - Input: `09_marketing_angles.md` + `03_avatar.md` + `06_desire_validation.md` + `product-marketing-context.md`
 - Task: Write one full advertorial (900–1500 words) using the Authority template (expert reveals hidden truth → research/insight → product as mechanism).
 - Prompt: `prompts/11b_advertorial_authority.md`
-- Output: `output/{brand}/{product}/11b_advertorial.md`
+- Output: `output/{brand}/{product}/research/11b_advertorial.md`
 
 > Both 11a and 11b are always generated. Run them sequentially (11a first, then 11b).
 
@@ -149,7 +149,7 @@ List all generated files. User selects (multi-select). Run `save_to_memory` for 
 
 If user provided a Drive folder URL during intake (not "skip"):
 Ask: "Ready to upload to Google Drive? Confirm folder: {folder_url}"
-On confirm: use `gws drive +upload` for each file in `output/{brand}/{product}/`.
+On confirm: use `gws drive +upload` for each file in `output/{brand}/{product}/research/`.
 If `--skip-drive` was passed, skip this step.
 
 ---

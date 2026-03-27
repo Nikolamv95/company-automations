@@ -7,9 +7,6 @@ description: >
 skills:
   - skills/copywriting/copywriter/SKILL.md
   - skills/copywriting/email-writer/SKILL.md
-context:
-  - projects/{brand}/brand.md
-  - output/{product}/product-marketing-context.md
 ---
 
 # Email Writer Agent
@@ -22,7 +19,7 @@ Writes email sequences and individual emails for any sequence type.
 ## When Activated
 
 Via `/write-copy`, copywriter routing, or direct request.
-Load `output/{product}/product-marketing-context.md` if it exists.
+Load `output/{brand}/{product}/research/product-marketing-context.md` if it exists.
 
 ## Standalone Mode
 

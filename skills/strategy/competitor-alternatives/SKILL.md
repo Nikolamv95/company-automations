@@ -10,7 +10,7 @@ Build pages that rank for competitive search terms and position your product eff
 
 ## Check Context First
 
-Read `output/{product}/product-marketing-context.md` if it exists — use competitive landscape section.
+Read `output/{brand}/{product}/research/product-marketing-context.md` if it exists — use competitive landscape section.
 
 ## Four Page Formats
 

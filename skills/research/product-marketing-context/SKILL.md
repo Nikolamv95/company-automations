@@ -6,12 +6,12 @@ description: "Create or update a foundational product marketing document. Use wh
 
 # Product Marketing Context
 
-Creates and maintains `output/{product}/product-marketing-context.md` — the single source of truth for all marketing work on this product. All other marketing skills read this file first.
+Creates and maintains `output/{brand}/{product}/research/product-marketing-context.md` — the single source of truth for all marketing work on this product. All other marketing skills read this file first.
 
 ## Workflow
 
 ### Step 1 — Check for Existing Context
-Look for `output/{product}/product-marketing-context.md`. If it exists:
+Look for `output/{brand}/{product}/research/product-marketing-context.md`. If it exists:
 - Show current sections
 - Ask: "Which sections need updating?"
 - Update only those sections
@@ -32,7 +32,7 @@ Two approaches:
 
 ### Step 3 — Create the Document
 
-Save to `output/{product}/product-marketing-context.md`:
+Save to `output/{brand}/{product}/research/product-marketing-context.md`:
 
 ```markdown
 # Product Marketing Context: [Product Name]

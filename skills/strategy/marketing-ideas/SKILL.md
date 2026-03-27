@@ -10,7 +10,7 @@ description: "Generate marketing ideas, growth strategies, or campaign concepts.
 
 ## Process
 
-1. Check `output/{product}/product-marketing-context.md` for product and audience context
+1. Check `output/{brand}/{product}/research/product-marketing-context.md` for product and audience context
 2. Ask: current stage, biggest constraint (time/money/team), and one thing that's worked
 3. Recommend 3-5 ideas with implementation steps
 4. Prioritize by: impact × ease × fit for current stage

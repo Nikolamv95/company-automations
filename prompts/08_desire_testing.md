@@ -9,9 +9,9 @@ Write **1200-1400 words** of Facebook ad copy for this mass desire: **{primary_d
 ## Context Files
 
 Load before writing:
-- `output/{product}/06_desire_validation.md` — validated desires and exact customer language
-- `output/{product}/07_hooks.md` — hooks written in step 7
-- `output/{product}/product-marketing-context.md` — brand context
+- `output/{brand}/{product}/research/06_desire_validation.md` — validated desires and exact customer language
+- `output/{brand}/{product}/research/07_hooks.md` — hooks written in step 7
+- `output/{brand}/{product}/research/product-marketing-context.md` — brand context
 
 ---
 

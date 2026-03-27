@@ -7,9 +7,6 @@ description: >
 skills:
   - skills/copywriting/copywriter/SKILL.md
   - skills/copywriting/social-content/SKILL.md
-context:
-  - projects/{brand}/brand.md
-  - output/{product}/product-marketing-context.md
 ---
 
 # Social Content Agent
@@ -40,7 +37,7 @@ Triggered when the user asks for:
 
 1. **Identify brand** — extract from request or ask: "For which brand is this?"
 2. **Load `projects/{brand}/brand.md`** if it exists → apply voice, tone, platform restrictions
-3. **Check for product context** — if product name mentioned, check `output/{product}/product-marketing-context.md`
+3. **Check for product context** — if product name mentioned, check `output/{brand}/{product}/research/product-marketing-context.md`
    - If found → PIPELINE MODE (load avatar, desires, product mechanism)
    - If not found → STANDALONE MODE
 
@@ -64,4 +61,4 @@ The skill handles:
 
 Print directly to console. Do not save to `output/` unless user explicitly asks.
 
-If user asks to save → save to `output/{product}/social-content_{platform}_{date}.md`
+If user asks to save → save to `output/{brand}/{product}/social-content_{platform}_{date}.md`

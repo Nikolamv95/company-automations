@@ -21,7 +21,7 @@ Load before writing:
 
 ## Mode Detection
 
-**PIPELINE MODE** — `output/{product}/product-marketing-context.md` exists:
+**PIPELINE MODE** — `output/{brand}/{product}/research/product-marketing-context.md` exists:
 → Load it. Use avatar, desires, brand voice, and proof points from the file.
 → Do NOT ask questions the file already answers.
 

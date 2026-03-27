@@ -7,9 +7,6 @@ description: >
 skills:
   - skills/copywriting/copywriter/SKILL.md
   - skills/copywriting/advertorial-writer/SKILL.md
-context:
-  - projects/{brand}/brand.md
-  - output/{product}/product-marketing-context.md
 ---
 
 # Advertorial Writer Agent
@@ -25,8 +22,8 @@ Both templates are **always generated** — run sequentially (11a first, then 11
 
 | Step | Prompt File | Input | Output |
 |------|-------------|-------|--------|
-| 11a — Nightmare | `prompts/11a_advertorial_nightmare.md` | `09_marketing_angles.md` + `06_desire_validation.md` + `03_avatar.md` + `product-marketing-context.md` | `output/{product}/11a_advertorial.md` |
-| 11b — Authority | `prompts/11b_advertorial_authority.md` | same inputs | `output/{product}/11b_advertorial.md` |
+| 11a — Nightmare | `prompts/11a_advertorial_nightmare.md` | `09_marketing_angles.md` + `06_desire_validation.md` + `03_avatar.md` + `product-marketing-context.md` | `output/{brand}/{product}/research/11a_advertorial.md` |
+| 11b — Authority | `prompts/11b_advertorial_authority.md` | same inputs | `output/{brand}/{product}/research/11b_advertorial.md` |
 
 Variables: `{primary_angle}` from `09_marketing_angles.md`, `{awareness_level}` from `01_awareness.md`.
 

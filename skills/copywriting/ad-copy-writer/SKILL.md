@@ -86,9 +86,9 @@ Don't test copy variations until concept and hook are validated.
 ## Mode Detection
 
 **PIPELINE MODE** — called from `/deep-research` with existing output files:
-→ Step 8: Load `output/{product}/07_hooks.md` + `output/{product}/06_desire_validation.md`
-→ Step 10: Load `output/{product}/09_marketing_angles.md` + `output/{product}/07_hooks.md`
-→ Save to: `output/{product}/08_desire_testing_copy.md` or `output/{product}/10_angle_testing_copy.md`
+→ Step 8: Load `output/{brand}/{product}/research/07_hooks.md` + `output/{brand}/{product}/research/06_desire_validation.md`
+→ Step 10: Load `output/{brand}/{product}/research/09_marketing_angles.md` + `output/{brand}/{product}/research/07_hooks.md`
+→ Save to: `output/{brand}/{product}/research/08_desire_testing_copy.md` or `output/{brand}/{product}/research/10_angle_testing_copy.md`
 → Do NOT ask questions the files already answer.
 
 **STANDALONE MODE** — no pipeline files exist:

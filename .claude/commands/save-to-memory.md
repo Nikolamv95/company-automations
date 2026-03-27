@@ -6,7 +6,7 @@ Usage:
 - `/save-to-memory "Product Name" 01,02,07` — saves files matched by number prefix
 
 Steps:
-1. List all `.md` files in `output/{brand}/{product}/`
+1. List all `.md` files in `output/{brand}/{product}/research/`
 2. Show numbered list (if no "all" flag)
 3. Ask: "Which files to save? (numbers, comma-separated, or 'all')"
 4. For each selected file: call `save_to_memory` MCP tool with the file path

@@ -20,13 +20,9 @@ Identify the market's level of awareness, its key beliefs, the TAM size, and its
 
 ---
 
-## 2. Awareness Definitions (from Breakthrough Advertising)
+## 2. Awareness Model
 
-- **Unaware:** Prospect doesn't recognize a problem or need.
-- **Problem Aware:** Prospect knows they have a problem but not that a solution exists.
-- **Solution Aware:** Prospect knows product categories that solve it, but not your product.
-- **Product Aware:** Prospect knows your product but isn't convinced it's the best choice.
-- **Most Aware:** Prospect knows and wants your product, just needs an offer.
+→ Load `skills/research/researcher/references/awareness-model.md` for the full 5-stage definitions, copywriting implications per level, and behavioral evidence to look for.
 
 ---
 

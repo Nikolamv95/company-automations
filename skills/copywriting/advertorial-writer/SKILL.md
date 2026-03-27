@@ -46,10 +46,10 @@ C = Call to Action (specific, low-friction next step)
 ## Mode Detection
 
 **PIPELINE MODE** — called from `/deep-research` with existing output files:
-→ Load `output/{product}/09_marketing_angles.md` — primary angle determines template (11a / 11b / 11c)
-→ Load `output/{product}/03_avatar.md` — for sensory details and exact language
-→ Load `output/{product}/06_desire_validation.md` — primary desire and validated language
-→ Save to: `output/{product}/11_advertorial.md`
+→ Load `output/{brand}/{product}/research/09_marketing_angles.md` — primary angle determines template (11a / 11b / 11c)
+→ Load `output/{brand}/{product}/research/03_avatar.md` — for sensory details and exact language
+→ Load `output/{brand}/{product}/research/06_desire_validation.md` — primary desire and validated language
+→ Save to: `output/{brand}/{product}/research/11_advertorial.md`
 → Do NOT ask questions the files already answer.
 
 **STANDALONE MODE** — no pipeline files exist:

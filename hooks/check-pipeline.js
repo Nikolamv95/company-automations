@@ -44,7 +44,7 @@ for (const filename of stateFiles) {
     continue;
   }
 
-  const { product, steps, completed_steps = [] } = state;
+  const { brand, product, steps, completed_steps = [] } = state;
 
   if (!product || !steps) {
     continue;
@@ -61,12 +61,13 @@ for (const filename of stateFiles) {
   // Incomplete pipeline — block stop and tell Claude what to do next
   const next = remaining[0];
   const progress = `${completed_steps.length}/${steps.length}`;
+  const outputPath = brand ? `output/${brand}/${product}/research/` : `output/${product}/research/`;
 
   console.log(
     `[Pipeline: ${product}] ${progress} steps complete. ` +
     `Next step: ${next}. ` +
     `Continue the pipeline — run step "${next}" for product "${product}". ` +
-    `Read the existing output files in output/${product}/ as context.`
+    `Read the existing output files in ${outputPath} as context.`
   );
 
   process.exit(2);

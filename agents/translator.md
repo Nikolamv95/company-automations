@@ -6,8 +6,6 @@ description: >
   single files, multiple files, or inline text.
 skills:
   - skills/translation/translator/SKILL.md
-context:
-  - projects/{brand}/brand.md
 ---
 
 # Translator Agent
@@ -28,7 +26,7 @@ Before translating:
 
 ## Input Modes
 
-**Product file selection:** List files in `output/{product}/`, user selects.
+**Product file selection:** List files in `output/{brand}/{product}/research/`, user selects.
 **Specific files:** Translate `@file.md` arguments directly.
 **Raw text:** Translate `--text "..."` and print to console. Do not save to disk.
 

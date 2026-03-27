@@ -7,9 +7,6 @@ description: >
 skills:
   - skills/copywriting/copywriter/SKILL.md
   - skills/copywriting/hook-writer/SKILL.md
-context:
-  - projects/{brand}/brand.md
-  - output/{product}/product-marketing-context.md
 ---
 
 # Hook Writer Agent
@@ -23,7 +20,7 @@ Writes opening hooks that stop the scroll and force the next sentence to be read
 
 - Input: `prompts/07_hooks.md` + `intake.md`
 - Variables: `{product_name}` from intake.md, `{primary_desire}` from `06_desire_validation.md`, `{awareness_level}` from `01_awareness.md`
-- Output: `output/{product}/07_hooks.md`
+- Output: `output/{brand}/{product}/research/07_hooks.md`
 
 Read `prompts/07_hooks.md` and follow it exactly.
 

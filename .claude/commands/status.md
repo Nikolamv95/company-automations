@@ -1,6 +1,6 @@
 Show the pipeline status for a product (or all products if no argument given): $ARGUMENTS
 
-1. If a product name is given (with or without brand): check `output/{brand}/{product}/` and list which output files exist (✓) and which are missing (✗). Also show `.pipeline-state-{brand_slug}-{product_slug}.json` if present — including any `failed_steps` or `skipped_steps`. Slugs = name lowercased, spaces → hyphens.
+1. If a product name is given (with or without brand): check `output/{brand}/{product}/research/` and list which output files exist (✓) and which are missing (✗). Also show `.pipeline-state-{brand_slug}-{product_slug}.json` if present — including any `failed_steps` or `skipped_steps`. Slugs = name lowercased, spaces → hyphens.
 
 2. If no product name: list all brand folders in `output/`, then for each show their product subfolders with a summary: `X/12 steps complete`.
 

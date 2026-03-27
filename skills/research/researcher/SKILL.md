@@ -15,7 +15,7 @@ Load it before executing. If brand.md doesn't exist for this brand, use system d
 
 ## Before Starting
 
-Check `projects/{brand}/brand.md` (if exists) + `output/{product}/product-marketing-context.md`. If present, load both — do not contradict established facts. Only fill gaps.
+Check `projects/{brand}/brand.md` (if exists) + `output/{brand}/{product}/research/product-marketing-context.md`. If present, load both — do not contradict established facts. Only fill gaps.
 
 ---
 
@@ -30,7 +30,7 @@ Map the target audience's awareness using Eugene Schwartz's 5-stage model. See `
 - Emotional state of the reader when they first see the ad
 - Key triggers that move them to the next level
 
-Save to: `output/{product}/01_awareness.md`
+Save to: `output/{brand}/{product}/research/01_awareness.md`
 
 ---
 
@@ -50,7 +50,7 @@ For each competitor:
 - White space opportunities (desires no one is addressing)
 - Pricing landscape
 
-Save to: `output/{product}/02_competitor.md`
+Save to: `output/{brand}/{product}/research/02_competitor.md`
 
 ---
 
@@ -68,7 +68,7 @@ Build a detailed psychographic customer avatar:
 
 **Deliverable:** Named avatar with vivid narrative, exact vocabulary section
 
-Save to: `output/{product}/03_avatar.md`
+Save to: `output/{brand}/{product}/research/03_avatar.md`
 
 ---
 
@@ -84,10 +84,10 @@ Structure:
 5. Key tensions (what they believe vs. what's true)
 6. Recommended entry point for copy (awareness level + emotional state)
 
-Also create: `output/{product}/product-marketing-context.md`
+Also create: `output/{brand}/{product}/research/product-marketing-context.md`
 (Brand context file for all downstream agents — never re-derive what's in here)
 
-Save to: `output/{product}/04_master_doc.md`
+Save to: `output/{brand}/{product}/research/04_master_doc.md`
 
 ---
 
@@ -114,6 +114,6 @@ Before presenting output, verify:
 - [ ] Step 3: Avatar includes a "Exact vocabulary" section with real quotes (not invented language)
 - [ ] Step 4: `product-marketing-context.md` created + `04_master_doc.md` saved
 - [ ] No fabricated data — every claim is flagged if low-confidence
-- [ ] All output files saved to correct paths: `output/{product}/0X_name.md`
+- [ ] All output files saved to correct paths: `output/{brand}/{product}/research/0X_name.md`
 
 If any check fails → fix it before presenting.

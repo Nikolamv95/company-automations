@@ -17,7 +17,7 @@ Load it before executing. If brand.md doesn't exist for this brand, use system d
 
 ## Before Starting
 
-Check `projects/{brand}/brand.md` (if exists) + `output/{product}/04_master_doc.md` + `product-marketing-context.md`. Load all that exist. Do not re-derive what's established.
+Check `projects/{brand}/brand.md` (if exists) + `output/{brand}/{product}/research/04_master_doc.md` + `product-marketing-context.md`. Load all that exist. Do not re-derive what's established.
 
 ---
 
@@ -25,7 +25,7 @@ Check `projects/{brand}/brand.md` (if exists) + `output/{product}/04_master_doc.
 
 Map desires across all 4 layers (surface, real, suppressed, identity). Score each on the Schwartz 3 dimensions. Map the fear stack for each top desire. See `references/desire-stack-model.md` for the full framework, scoring dimensions, and inventory template.
 
-Save to: `output/{product}/05_desire_extraction.md`
+Save to: `output/{brand}/{product}/research/05_desire_extraction.md`
 
 ---
 
@@ -39,7 +39,7 @@ Validate the top 3 desires against:
 
 **Select the PRIMARY DESIRE** — the one desire that, if promised and fulfilled, would most likely drive a purchase.
 
-Save to: `output/{product}/06_desire_validation.md`
+Save to: `output/{brand}/{product}/research/06_desire_validation.md`
 
 ---
 
@@ -47,7 +47,7 @@ Save to: `output/{product}/06_desire_validation.md`
 
 Build 5-7 distinct angles, each attacking the primary desire from a different entry point. For each angle: one-sentence concept, target segment, awareness level addressed, best format. See `references/desire-stack-model.md` for the full angle type table.
 
-Save to: `output/{product}/09_marketing_angles.md`
+Save to: `output/{brand}/{product}/research/09_marketing_angles.md`
 
 ---
 
@@ -69,6 +69,6 @@ Before presenting output, verify:
 - [ ] Step 6: Emotional resonance test + specificity test passed for the primary desire
 - [ ] Step 9: Exactly 5-7 angles built — each with one-sentence concept, target segment, awareness level, best format
 - [ ] All desires grounded in avatar research from `03_avatar.md` — none invented
-- [ ] All output files saved to correct paths: `output/{product}/0X_name.md`
+- [ ] All output files saved to correct paths: `output/{brand}/{product}/research/0X_name.md`
 
 If any check fails → fix it before presenting.

@@ -7,9 +7,6 @@ description: >
 skills:
   - skills/copywriting/copywriter/SKILL.md
   - skills/copywriting/ad-copy-writer/SKILL.md
-context:
-  - projects/{brand}/brand.md
-  - output/{product}/product-marketing-context.md
 ---
 
 # Ad Copy Writer Agent
@@ -23,8 +20,8 @@ Writes Facebook, YouTube, Google, and TikTok ad copy that tests desires and angl
 
 | Step | Prompt File | Input | Output |
 |------|-------------|-------|--------|
-| 8 — Desire Testing Copy | `prompts/08_desire_testing.md` | `07_hooks.md` + `06_desire_validation.md` + `product-marketing-context.md` | `output/{product}/08_desire_testing_copy.md` |
-| 10 — Angle Testing Copy | `prompts/10_angle_testing.md` | `09_marketing_angles.md` + `product-marketing-context.md` | `output/{product}/10_angle_testing_copy.md` |
+| 8 — Desire Testing Copy | `prompts/08_desire_testing.md` | `07_hooks.md` + `06_desire_validation.md` + `product-marketing-context.md` | `output/{brand}/{product}/research/08_desire_testing_copy.md` |
+| 10 — Angle Testing Copy | `prompts/10_angle_testing.md` | `09_marketing_angles.md` + `product-marketing-context.md` | `output/{brand}/{product}/research/10_angle_testing_copy.md` |
 
 Variables: `{product_name}` from intake.md, `{primary_desire}` from `06_desire_validation.md`, `{awareness_level}` from `01_awareness.md`, `{selected_hook}` top hook from `07_hooks.md` (step 8 only).
 

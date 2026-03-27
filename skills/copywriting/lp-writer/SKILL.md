@@ -21,8 +21,8 @@ Load before writing:
 
 ## Mode Detection
 
-**PIPELINE MODE** — `output/{product}/product-marketing-context.md` exists:
-→ Load it. Also load `output/{product}/06_desire_validation.md` for primary desire and avatar language.
+**PIPELINE MODE** — `output/{brand}/{product}/research/product-marketing-context.md` exists:
+→ Load it. Also load `output/{brand}/{product}/research/06_desire_validation.md` for primary desire and avatar language.
 → Do NOT ask questions the files already answer.
 
 **STANDALONE MODE** — no context file:

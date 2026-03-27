@@ -7,9 +7,9 @@ Based on the research from the forum posts you analyzed, create 5 fundamentally 
 ## Context Files
 
 Load before writing:
-- `output/{product}/06_desire_validation.md` — validated desires + verbatim forum language
-- `output/{product}/04_master_doc.md` — product and competitor context
-- `output/{product}/03_avatar.md` — avatar psychographic research
+- `output/{brand}/{product}/research/06_desire_validation.md` — validated desires + verbatim forum language
+- `output/{brand}/{product}/research/04_master_doc.md` — product and competitor context
+- `output/{brand}/{product}/research/03_avatar.md` — avatar psychographic research
 
 ---
 

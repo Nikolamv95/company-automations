@@ -11,16 +11,16 @@ We are going to be creating an advertorial around: **{primary_angle}**
 ## Context Files
 
 Load before writing:
-- `output/{product}/09_marketing_angles.md` — primary angle and story arc
-- `output/{product}/06_desire_validation.md` — desire language
-- `output/{product}/03_avatar.md` — avatar psychographics and exact language
-- `output/{product}/product-marketing-context.md` — brand context (product name, price, claims)
+- `output/{brand}/{product}/research/09_marketing_angles.md` — primary angle and story arc
+- `output/{brand}/{product}/research/06_desire_validation.md` — desire language
+- `output/{brand}/{product}/research/03_avatar.md` — avatar psychographics and exact language
+- `output/{brand}/{product}/research/product-marketing-context.md` — brand context (product name, price, claims)
 
 ---
 
 ## Target Specifications
 
-- **Length:** 900-1,200 words
+- **Length:** 900-1,500 words
 - **Reading Level:** 5th grade maximum
 - **Structure:** Customer testimonial story format (NOT company selling)
 - **Tone:** Conversational, emotional, urgent but helpful
@@ -133,7 +133,7 @@ Focus on these 3 desires (pull from `06_desire_validation.md` for specific langu
 
 ## Output
 
-One complete advertorial (900-1,200 words) following the exact RMBC structure above.
+One complete advertorial (900-1,500 words) following the exact RMBC structure above.
 
 Include at least 3 CTAs placed throughout (not just at the end).
 Include a brief disclaimer at the bottom.

@@ -6,9 +6,6 @@ description: >
   lp-writer, vsl-writer, advertorial-writer, social-content) and routes the request to it.
 skills:
   - skills/copywriting/copywriter/SKILL.md
-context:
-  - projects/{brand}/brand.md
-  - output/{product}/product-marketing-context.md
 ---
 
 # Copywriter Agent
@@ -30,7 +27,7 @@ If unclear which agent to use → ask one clarifying question before routing.
 
 1. **Identify brand:** Extract brand name from the request, or ask: "For which brand is this?"
 2. **Load brand context:** Check `projects/{brand}/brand.md` — if it exists, load it and pass to the sub-agent
-3. **Load product context:** Check `output/{product}/product-marketing-context.md` — if it exists, load it and pass to the sub-agent
+3. **Load product context:** Check `output/{brand}/{product}/research/product-marketing-context.md` — if it exists, load it and pass to the sub-agent
 
 ## Routing Instructions
 

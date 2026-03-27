@@ -48,7 +48,7 @@ Best for: email sequences.
 
 `/review {rubric} "Product Name"`
 
-1. List all `.md` files in `output/{product}/`
+1. List all `.md` files in `output/{brand}/{product}/research/`
 2. Ask which files to review (or "all")
 3. For each file: apply the rubric, output structured feedback
 

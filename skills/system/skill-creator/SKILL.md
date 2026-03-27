@@ -134,7 +134,7 @@ skills:
   - skills/{category}/{name}/SKILL.md
 context:
   - projects/{brand}/brand.md
-  - output/{product}/product-marketing-context.md  # include only if agent uses product context
+  - output/{brand}/{product}/research/product-marketing-context.md  # include only if agent uses product context
 ---
 
 # Agent Name
@@ -146,7 +146,7 @@ Load context files listed in frontmatter before executing.
 
 ## Pipeline Mode  ← include only if agent runs in /deep-research
 Input: [list input files]
-Output: output/{product}/XX_name.md
+Output: output/{brand}/{product}/research/XX_name.md
 Prompt file: prompts/XX_name.md  ← only for pipeline mode
 
 ## Standalone Mode

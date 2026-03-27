@@ -9,9 +9,9 @@ Write **1200-1400 words** of Facebook ad copy for this angle: **{primary_angle}*
 ## Context Files
 
 Load before writing:
-- `output/{product}/09_marketing_angles.md` — the 5 angles from step 9
-- `output/{product}/product-marketing-context.md` — brand context
-- `output/{product}/06_desire_validation.md` — desire language
+- `output/{brand}/{product}/research/09_marketing_angles.md` — the 5 angles from step 9
+- `output/{brand}/{product}/research/product-marketing-context.md` — brand context
+- `output/{brand}/{product}/research/06_desire_validation.md` — desire language
 
 ---
 

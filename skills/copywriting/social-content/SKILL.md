@@ -13,7 +13,7 @@ Load it before executing. If brand.md doesn't exist for this brand, use system d
 
 ## Mode Detection
 
-**PIPELINE MODE** — `output/{product}/product-marketing-context.md` exists:
+**PIPELINE MODE** — `output/{brand}/{product}/research/product-marketing-context.md` exists:
 → Load it. Use avatar, brand voice, and product info from the file.
 → Then confirm: platform, format, goal, and available assets.
 

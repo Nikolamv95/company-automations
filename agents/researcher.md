@@ -6,8 +6,6 @@ description: >
   steps 1–4). Also use for standalone research tasks on any of these topics.
 skills:
   - skills/research/researcher/SKILL.md
-context:
-  - projects/{brand}/brand.md
 ---
 
 # Researcher Agent
@@ -19,15 +17,15 @@ Executes market research pipeline steps 1, 2, 3, and 4.
 
 ## Pipeline Mode (triggered by /deep-research)
 
-Auto-activates when called from `/deep-research` or when `output/{product}/intake.md` exists.
+Auto-activates when called from `/deep-research` or when `output/{brand}/{product}/research/intake.md` exists.
 Read that file for all variables and follow the pipeline execution table below.
 
 | Step | Prompt File | Input | Output |
 |------|-------------|-------|--------|
-| 1 — Awareness Analysis | `prompts/01_awareness.md` | `intake.md` | `output/{product}/01_awareness.md` |
-| 2 — Competitor Research | `prompts/02_competitor.md` | `intake.md` | `output/{product}/02_competitor.md` |
-| 3 — Avatar / Psychographic | `prompts/03_avatar.md` | `intake.md` | `output/{product}/03_avatar.md` |
-| 4 — Master Document | `prompts/04_master_doc.md` | `01` + `02` + `03` | `output/{product}/04_master_doc.md` + `product-marketing-context.md` |
+| 1 — Awareness Analysis | `prompts/01_awareness.md` | `intake.md` | `output/{brand}/{product}/research/01_awareness.md` |
+| 2 — Competitor Research | `prompts/02_competitor.md` | `intake.md` | `output/{brand}/{product}/research/02_competitor.md` |
+| 3 — Avatar / Psychographic | `prompts/03_avatar.md` | `intake.md` | `output/{brand}/{product}/research/03_avatar.md` |
+| 4 — Master Document | `prompts/04_master_doc.md` | `01` + `02` + `03` | `output/{brand}/{product}/research/04_master_doc.md` + `product-marketing-context.md` |
 
 **Variable substitution** (replace `{variable}` placeholders in prompt templates):
 
