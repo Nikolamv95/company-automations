@@ -5,3 +5,5 @@ logs/
 node_modules/
 dist/
 *.js.map
+.claude/settings.local.json
+POTENTIAL_PROBLEMS.md
